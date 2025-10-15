@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Acekreme_v1.Models
+﻿namespace AceKreme_v1.Models
 {
-    public class ServiceResponse : Controller
+    /// <summary>Standard response wrapper for services.</summary>
+    public class ServiceResponse<T>
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public T? Data { get; set; }
+        public bool Success { get; set; } = true;
+        public string Message { get; set; } = string.Empty;
     }
 }

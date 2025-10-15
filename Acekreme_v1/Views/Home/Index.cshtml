@@ -1,8 +1,41 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center my-5">
+    <h1 class="display-5 fw-bold text-primary">Welcome to AceKreme_v1</h1>
+    <p class="lead text-secondary mt-3">
+        Streamlining product management, orders, and payments — all in one platform.
+    </p>
+    <div class="mt-4">
+        <a asp-controller="ProductPage" asp-action="List" class="btn btn-primary btn-lg me-2">View Products</a>
+        <a asp-controller="Checkout" asp-action="Index" class="btn btn-outline-dark btn-lg">Checkout</a>
+    </div>
 </div>
+
+<section class="row text-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5>Manage Products</h5>
+                <p>Keep your inventory organized with live updates and detailed tracking.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5>Handle Orders</h5>
+                <p>View, edit, and process customer orders in real time.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5>Secure Checkout</h5>
+                <p>Pay confidently using PayPal’s trusted gateway integration.</p>
+            </div>
+        </div>
+    </div>
+</section>

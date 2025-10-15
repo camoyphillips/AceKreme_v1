@@ -1,12 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
 
-namespace Acekreme_v1.ViewModels
+namespace AceKreme_v1.ViewModels
 {
-    public class ErrorViewModels : Controller
+    /// <summary>
+    /// Standard error view model for displaying request or server errors.
+    /// </summary>
+    public class ErrorViewModel
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        /// <summary>
+        /// Unique request identifier, useful for logging or troubleshooting.
+        /// </summary>
+        public string? RequestId { get; set; }
+
+        /// <summary>
+        /// Determines whether the request ID should be displayed in the view.
+        /// </summary>
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+        /// <summary>
+        /// Optional user-friendly message for custom error handling.
+        /// </summary>
+        public string? Message { get; set; }
+
+        /// <summary>
+        /// Optional timestamp to record when the error occurred.
+        /// </summary>
+        public DateTime? OccurredAt { get; set; } = DateTime.UtcNow;
     }
 }

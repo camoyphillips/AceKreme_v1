@@ -1,12 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Acekreme_v1.Models
+namespace AceKreme_v1.Models
 {
-    public class CustomerOrder : Controller
+    /// <summary>Join table between Customer and Order.</summary>
+    public class CustomerOrder
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        [Key]
+        public int CustomerOrderId { get; set; }
+
+        [ForeignKey(nameof(Customer))]
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; } = null!;
+
+        [ForeignKey(nameof(Order))]
+        public int OrderId { get; set; }
+        public Order Order { get; set; } = null!;
+
+        [StringLength(50)]
+        public string? PaymentMethod { get; set; }
+
+        [StringLength(100)]
+        public string? TransactionId { get; set; }
     }
 }

@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
 
-namespace Acekreme_v1.Dtos
+namespace AceKreme_v1.Dtos
 {
-    public class OrderDto : Controller
+    public class OrderDto
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public int OrderId { get; set; }
+        public DateTime OrderDate { get; set; }
+        public decimal TotalAmount { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }

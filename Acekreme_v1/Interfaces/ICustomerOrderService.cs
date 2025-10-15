@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AceKreme_v1.Dtos;
+using AceKreme_v1.Models;
 
-namespace Acekreme_v1.Interfaces
+namespace AceKreme_v1.Interfaces
 {
-    public class ICustomerOrderService : Controller
+    public interface ICustomerOrderService
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        Task<ServiceResponse<IEnumerable<CustomerOrderDto>>> GetAllAsync();
+        Task<ServiceResponse<CustomerOrderDto>> GetByIdAsync(int id);
+        Task<ServiceResponse<CustomerOrderDto>> CreateAsync(CustomerOrderDto dto);
+        Task<ServiceResponse<bool>> DeleteAsync(int id);
     }
 }

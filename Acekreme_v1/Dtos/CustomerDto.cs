@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Acekreme_v1.Dtos
+﻿namespace AceKreme_v1.Dtos
 {
-    public class CustomerDto : Controller
+    public class CustomerDto
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public int CustomerId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
     }
 }

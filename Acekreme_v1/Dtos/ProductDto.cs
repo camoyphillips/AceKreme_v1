@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Acekreme_v1.Dtos
+﻿namespace AceKreme_v1.Dtos
 {
-    public class ProductDto : Controller
+    public class ProductDto
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public int ProductId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+        public string? Description { get; set; }
+        public int Stock { get; set; }
+        public string? ProductImagePath { get; set; }
     }
 }

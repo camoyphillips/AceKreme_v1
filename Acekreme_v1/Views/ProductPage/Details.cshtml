@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model AceKreme_v1.Dtos.ProductDto
 @{
+    ViewData["Title"] = "Product Details";
 }
+<h1>Product Details</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Price</dt>
+    <dd class="col-sm-9">@Model.Price.ToString("C")</dd>
+
+    <dt class="col-sm-3">Stock</dt>
+    <dd class="col-sm-9">@Model.Stock</dd>
+
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+
+    <dt class="col-sm-3">Image</dt>
+    <dd class="col-sm-9">
+        @if (!string.IsNullOrWhiteSpace(Model.ProductImagePath))
+        {
+            <img src="@Model.ProductImagePath" alt="@Model.Name" class="img-fluid rounded border" style="max-width:320px;" />
+        }
+        else
+        {
+
+            <span class="text-muted">No image</span>
+        }
+    </dd>
+</dl>
+
+<div class="mt-3">
+    <a class="btn btn-secondary" asp-action="List">Back to List</a>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a>
+</div>
